@@ -4,7 +4,7 @@ export async function getDbClient() {
   return mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Judochop1!",
+    password: "",
     database: "color_history"
   });
 }
