@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: slategray;
+}
+#mainBox {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 20px;
+    transition: background-color 500ms ease;
+}
+#colorValue {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background: white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+#buttonGroup {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+#history {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.historyBox {
+    width: 20px;
+    height: 20px;
+}
+@media only screen and (max-width: 600px) {
+    #mainBox {
+        width: 300px;
+    }
+}

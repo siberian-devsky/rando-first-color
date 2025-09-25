@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" contents="device-width, initial-scale=1" />
+
+        
+    </head>
+    <body>
+        <div id="mainBox">
+            <div id="colorValue">click me!!</div>
+        </div>
+        <div id="buttonGroup">
+            <button onclick="copyToClipboard()" id="clipboard">COPY</button>
+            <button onclick="toggleLock()" id="lockUnlock">LOCK</button>
+            <button onclick="toggleColorFormatUi()" id="colorFormat">
+                HEX
+            </button>
+        </div>
+        <div id="history">
+            <button id="0" class="historyBox" onclick="restore(this)"></button>
+            <button id="1" class="historyBox" onclick="restore(this)"></button>
+            <button id="2" class="historyBox" onclick="restore(this)"></button>
+            <button id="3" class="historyBox" onclick="restore(this)"></button>
+            <button id="4" class="historyBox" onclick="restore(this)"></button>
+        </div>
+        <script src="./app.js"></script>
+    </body>
+</html>
