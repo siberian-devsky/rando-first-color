@@ -3,8 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" contents="device-width, initial-scale=1" />
-
-        
+        <link rel="stylesheet" href="./styles.css" />
     </head>
     <body>
         <div id="mainBox">
@@ -13,17 +12,15 @@
         <div id="buttonGroup">
             <button onclick="copyToClipboard()" id="clipboard">COPY</button>
             <button onclick="toggleLock()" id="lockUnlock">LOCK</button>
-            <button onclick="toggleColorFormatUi()" id="colorFormat">
-                HEX
-            </button>
+            <button onclick="toggleColorFormatUi()" id="colorFormat">Show Hex</button>
         </div>
         <div id="history">
-            <button id="0" class="historyBox" onclick="restore(this)"></button>
-            <button id="1" class="historyBox" onclick="restore(this)"></button>
-            <button id="2" class="historyBox" onclick="restore(this)"></button>
-            <button id="3" class="historyBox" onclick="restore(this)"></button>
-            <button id="4" class="historyBox" onclick="restore(this)"></button>
+            <button id="history0" class="historyBox"></button>
+            <button id="history1" class="historyBox"></button>
+            <button id="history2" class="historyBox"></button>
+            <button id="history3" class="historyBox"></button>
+            <button id="history4" class="historyBox"></button>
         </div>
-        <script src="./app.js"></script>
+        <script src="./app.js" type="module"></script>
     </body>
 </html>
