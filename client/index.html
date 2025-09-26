@@ -7,12 +7,12 @@
     </head>
     <body>
         <div id="mainBox">
-            <div id="colorValue">click me!!</div>
+            <div id="colorValue">rgb(0, 0, 0)</div>
         </div>
         <div id="buttonGroup">
-            <button onclick="copyToClipboard()" id="clipboard">COPY</button>
-            <button onclick="toggleLock()" id="lockUnlock">LOCK</button>
-            <button onclick="toggleColorFormatUi()" id="colorFormat">Show Hex</button>
+            <button id="clipboard">COPY</button>
+            <button id="lockUnlockBtn">LOCK</button>
+            <button id="colorFormat">Show Hex</button>
         </div>
         <div id="history">
             <button id="history0" class="historyBox"></button>
@@ -21,6 +21,8 @@
             <button id="history3" class="historyBox"></button>
             <button id="history4" class="historyBox"></button>
         </div>
+        <div id="gradientBox"></div>
+        <button id="rainbowBtn">Taste The Rainbow</button>
         <script src="./app.js" type="module"></script>
     </body>
 </html>

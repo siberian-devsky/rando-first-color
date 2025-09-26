@@ -33,4 +33,14 @@ app.get('/test', async (req, res) => {
   }
 })
 
+app.get('/randomRainbow', async (req, res) => {
+  try{
+    const sql = 'SELECT * FROM colors ORDER BY RAND() LIMIT 10'
+    const [rows, fields] = await client.query(sql)
+    res.status(200).send({rows: rows, fields: fields.length})
+  } catch (err) {
+    res.status(500).send({ error: "oh shiot" })
+  }
+})
+
 app.listen(port, () => console.log(`App running on port ${port}`));

@@ -49,8 +49,16 @@ button {
     width: 20px;
     height: 20px;
 }
+#gradientBox {
+    margin-top: 30px;
+    width: 600px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
 @media only screen and (max-width: 600px) {
-    #mainBox {
-        width: 300px;
+    #mainBox, #gradientBox {
+        width: 450px;
     }
 }

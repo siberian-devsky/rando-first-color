@@ -19,3 +19,29 @@ export function convertHexToRgb(hex) {
   const b = parseInt(hex.slice(5, 7), 16);
   return `rgb(${r}, ${g}, ${b})`;
 }
+
+export function copyToClipboard(text) {
+    navigator.clipboard.writeText(text);
+}
+
+export async function getRandomColorsFromDb() {
+    try {
+        const response = await fetch ("http://localhost:8000/randomRainbow")
+        const data = await response.json()
+
+        // should be 10 (poor man's validation)
+        if (!Array.isArray(data.rows) || data.rows.length !== 10) {
+            throw new Error("Color data is malformed");
+        }
+
+        const gradient = `linear-gradient(to right, ${
+            data.rows.map( (row, idx) => `${row.hex} ${idx * 10}%`).join(', ')
+        })`
+        
+        const grandientBox = document.querySelector("#gradientBox")
+        grandientBox.style.background = gradient;
+        
+    } catch (err) {
+        console.log(`Error: ${err}`)
+    }
+}
