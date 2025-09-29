@@ -1,5 +1,5 @@
 import { history, colorFormat, toggleLocked } from "./state.js";
-import { convertRgbToHex } from "./colorUtils.js";
+import { convertHexToRgb, convertRgbToHex } from "./colorUtils.js";
 
 export function updateHistory(color) {
     for (let i = history.length - 2; i >= 0; i--) {
@@ -13,7 +13,7 @@ export function updateHistory(color) {
 }
 
 export function restore(historyItem, mainBox, colorValue, copyBtn) {
-    mainBox.style.background = historyItem.color;
+    mainBox.style.backgroundColor = historyItem.color;
     colorValue.innerHTML = historyItem.color;
     copyBtn.style.backgroundColor = historyItem.color;
 }
@@ -32,13 +32,15 @@ export function toggleLock(mainBox, clickListener, lockUnlockBtn) {
 }
 
 export function toggleColorFormatUi(colorValue, copyBtn) {
-    const current = history[0].color; // SST: always RGB
-    const displayColor = colorFormat.showAsRgb
-        ? convertRgbToHex(current)
-        : current;
-
+    // defaults to true on load
     colorFormat.showAsRgb = !colorFormat.showAsRgb;
+    
+    const current = colorValue.innerHTML; // whatever is currently displayed
 
+    const displayColor = colorFormat.showAsRgb
+        ? convertHexToRgb(current)
+        : convertRgbToHex(current);
+    
     colorValue.innerHTML = displayColor;
     copyBtn.style.backgroundColor = displayColor;
     colorFormat.button.innerHTML = colorFormat.showAsRgb

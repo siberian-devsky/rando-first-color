@@ -30,12 +30,12 @@ export async function getRandomColorsFromDb() {
         const data = await response.json()
 
         // should be 10 (poor man's validation)
-        if (!Array.isArray(data.rows) || data.rows.length !== 10) {
+        if (!Array.isArray(data.rows) || data.rows.length !== 5) {
             throw new Error("Color data is malformed");
         }
 
         const gradient = `linear-gradient(to right, ${
-            data.rows.map( (row, idx) => `${row.hex} ${idx * 10}%`).join(', ')
+            data.rows.map( (row, idx) => `${row.hex} ${idx * 20}%`).join(', ')
         })`
         
         const grandientBox = document.querySelector("#gradientBox")

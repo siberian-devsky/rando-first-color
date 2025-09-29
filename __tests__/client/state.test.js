@@ -1,6 +1,6 @@
-import test from "node:test";
-import { colorFormat } from "../../client/state";
+import { test, expect } from "vitest"
+import { colorFormat } from "../../client/state.js";
 
-test('colorFormat.button return null', () => {
-    expect(colorFormat.button).toBeNull()
-})
+test("colorFormat.button should be null", () => {
+  expect(colorFormat.button).toBe(null);
+});

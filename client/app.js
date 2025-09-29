@@ -32,6 +32,14 @@ for (let i = 0; i < 5; i++) {
     );
 }
 
+history.forEach((h) => {
+    h.button.addEventListener('click', () => {
+        restore(h);
+        toggleColorFormatUi(colorValue, copyBtn);
+    });
+});
+
+
 // click handler
 async function clickListener() {
     const color = `rgb(${getColor()}, ${getColor()}, ${getColor()})`;
