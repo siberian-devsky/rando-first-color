@@ -32,15 +32,15 @@ export function toggleLock(mainBox, clickListener, lockUnlockBtn) {
 }
 
 export function toggleColorFormatUi(colorValue, copyBtn) {
-    // defaults to true on load
-    colorFormat.showAsRgb = !colorFormat.showAsRgb;
     
     const current = colorValue.innerHTML; // whatever is currently displayed
-
+    
     const displayColor = colorFormat.showAsRgb
         ? convertHexToRgb(current)
         : convertRgbToHex(current);
     
+    colorFormat.showAsRgb = !colorFormat.showAsRgb;
+
     colorValue.innerHTML = displayColor;
     copyBtn.style.backgroundColor = displayColor;
     colorFormat.button.innerHTML = colorFormat.showAsRgb

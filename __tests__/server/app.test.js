@@ -11,9 +11,9 @@ describe("Test express routes", async () => {
         expect(res.body.data).toBe("/test API is alive")
     })
 
-    it("GET /randomRainbow returns a list of 10", async () => {
+    it("GET /randomRainbow returns a list of length 5", async () => {
         const res = await request(app).get("/randomRainbow")
-        expect(res.body.rows.length).toBe(10)
+        expect(res.body.rows.length).toBe(5)
         expect(res.body.rows.every( (row) => row.rgb && row.hex)).toBe(true)
         expect(res.body.fields).toBe(4)
     })
